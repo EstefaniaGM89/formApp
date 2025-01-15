@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulari amb Validació i Camps Seqüencials</title>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+  >
+</head>
+<body>
+  <main class="container">
+    <h1>Formulari: Crear Perfil</h1>
+    <p>Completa els camps seguint l'ordre establert. Cada camp es desbloquejarà quan l'anterior sigui vàlid.</p>
+    <form id="userForm" method="GET">
+      <!-- Camps d'informació personal -->
+      <fieldset>
+        <legend><strong>Informació personal</strong></legend>
+        
+        <!-- Nom -->
+        <label for="firstName">Nom:</label>
+        <input type="text" id="firstName" name="firstName" required />
+        
+        <!-- Correu electrònic -->
+        <label for="email">Correu electrònic:</label>
+        <input type="email" id="email" name="email" disabled />
+        
+        <!-- Data de naixement -->
+        <label for="birthDate">Data de naixement:</label>
+        <input type="date" id="birthDate" name="birthDate" disabled />
+      </fieldset>
+
+      <!-- Camps de seleccions i preferències -->
+      <fieldset>
+        <legend><strong>Seleccions i preferències</strong></legend>
+        
+        <!-- Select -->
+        <label for="cycle">Cicle formatiu:</label>
+        <select id="cycle" name="cycle" disabled>
+          <option value="" disabled selected>Selecciona una opció</option>
+          <option value="DAW">DAW</option>
+          <option value="DAM">DAM</option>
+          <option value="ASIX">ASIX</option>
+          <option value="Un altre">Un altre</option>
+        </select>
+        
+        <!-- Radio buttons -->
+        <label>Modalitat:</label>
+        <label>
+          <input type="radio" name="modality" value="Presencial" disabled /> Presencial
+        </label>
+        <label>
+          <input type="radio" name="modality" value="Online" disabled /> Online
+        </label>
+      </fieldset>
+
+      <!-- Camps de detalls addicionals -->
+      <fieldset>
+        <legend><strong>Altres detalls</strong></legend>
+        
+        <!-- URL -->
+        <label for="profilePic">Foto de perfil (URL):</label>
+        <input type="url" id="profilePic" name="profilePic" disabled />
+        
+        <!-- Text de presentació -->
+        <label for="bio">Presentació:</label>
+        <textarea id="bio" name="bio" rows="4" placeholder="Escriu una breu presentació sobre tu" disabled></textarea>
+      </fieldset>
+
+      <!-- Botons -->
+      <button type="submit" id="submitBtn" disabled>Enviar dades</button>
+    </form>
+  </main>
+
+  <script src="scripts/index.js"></script>
+</body>
+</html>
